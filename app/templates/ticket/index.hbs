@@ -1,0 +1,22 @@
+<table>
+    {{#each model as |ticket|}}
+     <tr>
+        <td> 
+            {{ticket.id}}
+        </td>
+        <td>
+            {{ticket.body}}
+        </td>
+        <td>
+            {{ticket.time}}
+        </td>
+        <td>
+            {{ticket.status}}
+        </td>
+        <td>
+            {{ticket.customer.id}}
+        </td>
+     </tr>
+{{/each}}
+</table>
+{{outlet}}

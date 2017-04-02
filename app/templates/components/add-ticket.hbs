@@ -1,33 +1,40 @@
 <h1> Add Ticket </h1>
+<div class="row">
+    <div class="col-8">
+        
+            <div class="container">
+                <div class="row" style="margin-bottom: 20px">
+                    CID : 
+                    {{input type="text" value=ticket.CID change=(action "findCustomer")}}
+                <br>
+                  <!--  Mob ID:
+                    {{input type="number" value=mobId }} -->
+                </div>
+            <div class="row">
+                {{#if ticket.customer}}
+                    {{show-customer customer=ticket.customer}}
 
-<p>
-    CID : 
-{{input type="text" value=ticket.CID change=(action "findCustomer")}}
-</p>
-<p>
-    Mob ID:
-        {{input type="number" value=mobId }}
-</p>
+                    <div class="input-group" style="margin-bottom: 20px">
+                    <span class="input-group-addon" id="basic-addon1">Body</span>
+                    {{textarea value=ticket.body class="form-control" }}
+                    </div>
+                    
+                    <button class="btn btn-primary" {{action 'addTicket'}} > Create Ticked for {{ticket.customer.id}} </button>
+                    
+                {{/if}}
+            </div>
+        </div>
+        
+    </div>
 
-
-<div>
-    <ul>
-    {{#each possibleCustomers as |customer|}}
-       <li {{action "setCID"  customer.id}}> <a> {{customer.id}} </a></li>
-    {{/each}}
-    </ul>
+    <div class="col-4">
+        <div class="m pull-right">
+            <ul class="list-group">
+            {{#each possibleCustomers as |customer|}}
+            <li class="list-group-item" {{action "setCID"  customer.id}}> <a> {{customer.id}} </a></li>
+            {{/each}}
+            </ul>
+        </div>
+    </div>
 </div>
 
-{{#if ticket.customer}}
-    {{show-customer customer=ticket.customer}}
-
-    <div>
-        {{textarea value=ticket.body}}
-
-        <button {{action 'addTicket'}} > Submit </button>
-    </div>
-{{/if}}
-
-
-
-{{yield}}

@@ -15,7 +15,8 @@ export default Ember.Component.extend({
                 console.log(customers);
                 if( customers.get('length') == 1 )
                     {
-                        this.set('ticket.customer', customers.get("firstObject"));
+                        const ticket = this.get('ticket');
+                        ticket.set('customer', customers.get("firstObject"));
                     }
             })
         },
@@ -26,7 +27,7 @@ export default Ember.Component.extend({
         },
         addTicket(){
             this.get('ticket').save().then( ticket=>{
-                this.get('router').transitionTo('home');
+                this.get('router').transitionTo('ticket');
             }).catch(err=>{
                 this.get('router').transitionTo('500');
         });

@@ -1,23 +1,27 @@
-<div>
-    <ul>
-        <li>
+<div class="panel panel-primary">
+  <div class="panel-heading">Ticket for {{ticket.customer.id}}</div>
+  <div class="panel-body">
+    <ul class="list-group">
+        <li class="list-group-item">
             {{customer.id}}
         </li>
-       <li>
+       <li class="list-group-item">
             {{customer.Name}}
         </li>
-        <li>
+        <li class="list-group-item">
             {{customer.Address}}
         </li>
-        <li>
+        <li class="list-group-item">
             {{customer.Mobile}}
         </li>
-       <li>
-            {{customer.Email}}
-        </li>
-        <li>
+       {{#if customer.Email}}
+        <li class="list-group-item">
+                {{customer.Email}}
+            </li>
+        {{/if}}
+        <li class="list-group-item">
             {{customer.expiry}}
         </li>
     </ul>
+    </div>
 </div>
-{{yield}}

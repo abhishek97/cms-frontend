@@ -1,9 +1,7 @@
-
-<div class="panel panel-default">
-  <!-- Default panel contents -->
-  <div class="panel-heading">Open Tickets</div>
-  
-    <table class="table">
+<div class="panel panel-primary">
+  <div class="panel-heading">Ticket for {{ticket.customer.id}}</div>
+  <div class="panel-body">
+     <table class="table">
         <thead>
             <tr>
                 <th> # </th>
@@ -16,8 +14,8 @@
             </tr>
         </thead>
         <tbody>
-            {{#each model as |ticket|}}
-            <tr {{action 'showTicket' ticket.id }}>
+            
+            <tr>
                 <td> 
                     {{ticket.id}}
                 </td>
@@ -40,8 +38,8 @@
                     {{ticket.customer.Mobile}}
                 </td>
             </tr>
-        {{/each}}
         </tbody>
     </table>
+  </div>
 </div>
-{{outlet}}
+

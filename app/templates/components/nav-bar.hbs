@@ -1,10 +1,22 @@
-<table>
-    <tr>
-        <td> {{#link-to "ticket"}}
-            <a href="">Tickets </a>
-        {{/link-to}}
-        </td>
-    </tr>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed"
+      data-toggle="collapse" data-target="#menu-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      {{ link-to 'Alphanet CMS' 'index' class="navbar-brand" }}
+    </div>
 
-</table>
+    <div class="collapse navbar-collapse" id="menu-collapse">
+      <ul class="nav navbar-nav">
+        <li>{{ link-to 'Manage Tickets' 'ticket' }}</li>
+        <li>{{ link-to 'Add Tickets' 'ticket.add' }}</li>
+      </ul>
+    </div>
+  </div>
+</nav>
 {{yield}}

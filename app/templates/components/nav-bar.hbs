@@ -13,9 +13,16 @@
 
     <div class="collapse navbar-collapse" id="menu-collapse">
       <ul class="nav navbar-nav">
+        {{#if session.isAuthenticated}}
         <li>{{ link-to 'Manage Tickets' 'ticket' }}</li>
         <li>{{ link-to 'Add Tickets' 'ticket.add' }}</li>
+      {{/if}}
+
       </ul>
+      {{#if session.isAuthenticated}}
+          <p class="navbar-right navbar-text">Welcome {{session.apiKey}} </p>
+         <button class="navbar-right btn btn-default navbar-btn" {{action "logOut"}} > Logout </button> 
+       {{/if}}
     </div>
   </div>
 </nav>

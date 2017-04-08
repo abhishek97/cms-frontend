@@ -1,4 +1,4 @@
-<div class="panel panel-primary">
+<div class="panel panel-default panel-{{unless ticket.status 'primary'}} ">
   <div class="panel-heading">Ticket for {{ticket.customer.id}}</div>
   <div class="panel-body">
      <table class="table">
@@ -43,3 +43,7 @@
   </div>
 </div>
 
+<div class="row">
+    <button class="btn btn-primary" {{action "reOpenTicket"}} >Re-Open Ticket </button>
+    <button class="btn btn-danger" {{action "closeTicket"}}  > Close Ticket </button>
+</div>

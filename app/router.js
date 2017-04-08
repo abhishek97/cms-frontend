@@ -13,6 +13,7 @@ Router.map(function() {
   });
   this.route('home');
   this.route('500');
+  this.route('login');
 });
 
 export default Router;

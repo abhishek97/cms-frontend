@@ -2,8 +2,9 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
     actions : {
-        showTicket(id){
-            this.transitionToRoute('ticket.show',id);
-        }
+      routeToShowTicket(id){
+        console.log(id);
+        this.transitionToRoute('ticket.show',id);
+      }
     }
 });

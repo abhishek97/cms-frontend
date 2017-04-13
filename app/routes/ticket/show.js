@@ -2,6 +2,9 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
     model(params){
-        return this.store.findRecord('ticket',params.id);
+        return Ember.RSVP.hash({
+            ticket : this.store.findRecord('ticket',params.id),
+            fieldBoys : this.store.findAll('fb')
+        }) ;
     }
 });

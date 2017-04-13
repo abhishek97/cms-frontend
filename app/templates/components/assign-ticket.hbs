@@ -1,0 +1,5 @@
+Assigned To
+{{x-select labelKey='name' valueKey='id' model=allBoys value=ticket.fb onSelect=(action 'select') }}
+
+<button class="btn btn-success" {{action 'assignTo'}} > Assign </button>
+{{yield}}

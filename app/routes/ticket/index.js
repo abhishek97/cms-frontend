@@ -1,7 +1,12 @@
 import Ember from 'ember';
+import moment from 'npm:moment';
 
 export default Ember.Route.extend({
     model(){
-        return this.get('store').findAll('ticket');
+        return this.get('store').query('ticket', {
+          filter : {
+            after : moment().subtract(1,'days').format()
+          }
+        });
     }
 });

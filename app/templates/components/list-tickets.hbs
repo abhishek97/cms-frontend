@@ -9,15 +9,15 @@
             <th> # </th>
             <th> Complaint Text </th>
             <th> Time </th>
-            <th> Status </th>
             <th> Customer ID </th>
             <th> Customer Address </th>
             <th> Customer Mobile </th>
+            <th> Status </th>
         </tr>
         </thead>
         <tbody>
         {{#each model as |ticket|}}
-            <tr {{action 'showTicket' ticket.id }}>
+            <tr {{action 'showTicket' ticket.id }} class="statusCode{{ticket.status}}" >
                 <td>
                   {{ticket.id}}
                 </td>
@@ -28,9 +28,6 @@
                   {{ticket.time}}
                 </td>
                 <td>
-                  {{ticket.status}}
-                </td>
-                <td>
                   {{ticket.customer.id}}
                 </td>
                 <td>
@@ -38,6 +35,9 @@
                 </td>
                 <td>
                   {{ticket.customer.Mobile}}
+                </td>
+                <td>
+                  {{ticket.statusText}}
                 </td>
             </tr>
         {{/each}}

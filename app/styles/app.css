@@ -19,3 +19,9 @@
 .gapped{
     margin-bottom: 25px;
 }
+.statusCode1{
+  background-color: #7f7f7f;
+}
+.statusCode2{
+  background-color: #dd6a58;
+}

@@ -14,16 +14,16 @@
             </tr>
         </thead>
         <tbody>
-            
+
             <tr>
-                <td> 
+                <td>
                     {{ticket.id}}
                 </td>
                 <td>
                     {{ticket.body}}
                 </td>
                 <td>
-                    {{ticket.time}}
+                  {{moment-format ticket.time 'DD MMM YYYY, HH:mm'}}
                 </td>
                 <td>
                     {{ticket.status}}

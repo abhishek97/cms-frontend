@@ -25,7 +25,7 @@
                   {{ticket.body}}
                 </td>
                 <td>
-                  {{ticket.time}}
+                  {{moment-format ticket.time 'DD MMM YYYY, HH:mm'}}
                 </td>
                 <td>
                   {{ticket.customer.id}}

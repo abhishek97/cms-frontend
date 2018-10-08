@@ -3,6 +3,10 @@ import Ember from 'ember';
 export default Ember.Component.extend({
     store : Ember.inject.service(),
     router: Ember.inject.service('-routing'),
+    didReceiveAttrs () {
+      this._super(...arguments)
+      this.send('setCID', this.get('cid'))
+    },
     actions : {
         findCustomer(){
             this.get('store').query('customer',{

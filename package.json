@@ -37,6 +37,7 @@
     "ember-export-application-global": "^1.0.5",
     "ember-load-initializers": "^0.6.0",
     "ember-moment": "7.3.0",
+    "ember-power-select": "2.0.5",
     "ember-resolver": "^2.0.3",
     "ember-select": "0.2.1",
     "ember-simple-auth": "1.2.2",

@@ -1,5 +1,13 @@
 Assigned To
-{{x-select labelKey='name' valueKey='id' model=allBoys value=ticket.fb onSelect=(action 'select') }}
+{{#power-select
+  options=allBoys
+  searchField='name'
+  selected=ticket.fb
+  onchange=(action (mut ticket.fb))
+  as |boy|
+}}
+  {{boy.name}}
+{{/power-select}}
 
 <button class="btn btn-success" {{action 'assignTo'}} > Assign </button>
 {{yield}}

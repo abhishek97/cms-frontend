@@ -44,6 +44,8 @@
 </div>
 
 <div class="row">
-    <button class="btn btn-primary" {{action "reOpenTicket"}} >Re-Open Ticket </button>
+    {{#if (eq ticket.status 2)}}
+      <button class="btn btn-primary" {{action "reOpenTicket"}} >Re-Open Ticket </button>
+    {{/if}}
     <button class="btn btn-danger" {{action "closeTicket"}}  > Close Ticket </button>
 </div>

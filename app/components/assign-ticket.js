@@ -8,9 +8,5 @@ export default Ember.Component.extend({
               this.get('router').transitionTo('ticket');
             });
         },
-        select(value){
-            console.log(value);
-            this.set('ticket.fb', this.get('allBoys').findBy('id', value) );
-        }
     }
 });

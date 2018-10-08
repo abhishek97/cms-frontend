@@ -37,7 +37,10 @@
                   {{ticket.customer.Mobile}}
                 </td>
                 <td>
-                  {{ticket.statusText}}
+                  {{ticket.statusText}} 
+                  {{#if ticket.status}}
+                    ({{ticket.fb.name}})
+                  {{/if}}
                 </td>
             </tr>
         {{/each}}

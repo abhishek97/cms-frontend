@@ -15,9 +15,9 @@ export default DS.Model.extend({
       if(status === 0)
         statusText = 'Open';
       else if(status === 1)
-        statusText = 'Resolved By Agent';
+        statusText = 'Assigned To Agent';
       else if(status === 2)
-        statusText = 'Closed';
+        statusText = 'Resolved By Agent';
 
       return statusText;
     })

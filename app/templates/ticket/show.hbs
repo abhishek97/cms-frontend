@@ -1,4 +1,10 @@
-{{show-ticket ticket=model.ticket}}
-{{assign-ticket ticket=model.ticket allBoys=model.fieldBoys }}
+{{#if (gt model.ticket.status 2)}}
+  {{log model.ticket}}
+  <h1> Cannot modify already closed ticket. Contact Administrator.</h1>
+{{else}}
+  {{show-ticket ticket=model.ticket}}
+  {{assign-ticket ticket=model.ticket allBoys=model.fieldBoys }}
+  {{outlet}}
+{{/if}}
 
-{{outlet}}
+

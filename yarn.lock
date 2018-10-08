@@ -2570,6 +2570,14 @@ ember-moment@^7.8.0:
     ember-getowner-polyfill "^2.0.1"
     ember-macro-helpers "^1.0.0"
 
+ember-notify@^5.3.0:
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/ember-notify/-/ember-notify-5.3.0.tgz#8f798b7e8bbb9cca2511a15c34838c1afdc53cf3"
+  dependencies:
+    ember-cli-babel "^6.6.0"
+    ember-cli-htmlbars "^2.0.1"
+    object-assign "^4.1.0"
+
 ember-power-select@^2.0.9:
   version "2.0.9"
   resolved "https://registry.yarnpkg.com/ember-power-select/-/ember-power-select-2.0.9.tgz#ebe08f7d3f2fdec44558370adaa6b533486132b5"

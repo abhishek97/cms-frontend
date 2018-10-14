@@ -45,7 +45,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-	ENV.host = 'http://api.alphanetbroadband.com';
+	ENV.host = 'https://api.alphanetbroadband.com';
   }
 
   return ENV;

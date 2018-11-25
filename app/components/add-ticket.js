@@ -15,11 +15,15 @@ export default Ember.Component.extend({
         }
       }).then(customers => {
         this.set('possibleCustomers', customers);
-        //console.log(customers.get('length') == 1);
-        console.log(customers);
+
         if (customers.get('length') == 1) {
           const ticket = this.get('ticket');
           ticket.set('customer', customers.get("firstObject"));
+        } else {
+          const customer = customers.find(customer => customer.get("id") == this.get("ticket.CID"))
+          if (customer) {
+            this.set("ticket.customer", customer)
+          }
         }
       })
     },

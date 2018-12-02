@@ -33,3 +33,7 @@
 .pointer:hover {
   background-color: lightgoldenrodyellow
 }
+
+.navbar-right.btn {
+  margin-left: 10px;
+}

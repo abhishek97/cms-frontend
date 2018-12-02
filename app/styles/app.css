@@ -25,3 +25,11 @@
 .statusCode2{
   background-color: #E3FEA1;
 }
+
+.pointer {
+  cursor: pointer;
+}
+
+.pointer:hover {
+  background-color: lightgoldenrodyellow
+}

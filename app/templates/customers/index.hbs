@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    Search: {{input type="text" placeholder="search for customer" value=q size="30"}}
+  </div>
+  {{#if model.length}}
+    <div class="row">
+      <table class="table">
+          <thead>
+          <tr>
+              <th> # </th>
+              <th> Customer ID </th>
+              <th> Name </th>
+              <th> Address </th>
+              <th> Mobile </th>
+              <th> Email </th>
+          </tr>
+          </thead>
+          <tbody>
+          {{#each model as |customer index|}}
+              {{#link-to 'customers.id' customer.id tagName="tr" class="pointer" }}
+                  <td>
+                    {{inc index 1}}
+                  </td>
+                  <td>
+                    {{customer.id}}
+                  </td>
+                  <td>
+                    {{customer.Name}}
+                  </td>
+                  <td>
+                    {{customer.Address}}
+                  </td>
+                  <td>
+                    {{customer.Mobile}}
+                  </td>
+                  <td>
+                    {{customer.Email}}
+                  </td>
+              {{/link-to}}
+          {{/each}}
+          </tbody>
+      </table>
+    </div>
+  {{/if}}
+</div>

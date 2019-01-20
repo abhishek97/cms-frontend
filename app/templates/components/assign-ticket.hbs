@@ -1,13 +1,41 @@
-Assigned To
-{{#power-select
-  options=allBoys
-  searchField='name'
-  selected=ticket.fb
-  onchange=(action (mut ticket.fb))
-  as |boy|
-}}
-  {{boy.name}}
-{{/power-select}}
 
-<button class="btn btn-success" {{action 'assignTo'}} > Assign </button>
-{{yield}}
+
+<div class="row" style="display: flex; align-items: center">
+  <div class="col-sm-2">
+    Assigned To
+  </div>
+  <div class="col-sm-1">
+    Boy #1: 
+  </div>
+  <div class="col-sm-3">
+    {{#power-select
+    options=allBoys
+    searchField='name'
+    selected=ticket.fb
+    onchange=(action (mut ticket.fb))
+    as |boy|
+    }}
+      {{boy.name}}
+    {{/power-select}}
+  </div>
+  <div class="col-sm-1">
+    Boy #2: 
+  </div>
+  <div class="col-sm-3">
+    {{#power-select
+    options=allBoys
+    searchField='name'
+    selected=ticket.helper
+    onchange=(action (mut ticket.helper))
+    as |boy|
+    }}
+      {{boy.name}}
+    {{/power-select}}
+  </div>
+  <div class="col-sm-2">
+    <button class="btn btn-success" {{action 'assignTo'}} > Assign </button>
+  </div>
+</div>
+
+
+

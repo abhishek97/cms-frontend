@@ -8,6 +8,7 @@ export default DS.Model.extend({
     body : DS.attr(),
     customer : DS.belongsTo('customer'),
     fb : DS.belongsTo('fb'),
+    helper: DS.belongsTo('fb'),
     statusText : Ember.computed('status', function () {
       const status = this.get('status');
       let statusText = 'Invalid Status';

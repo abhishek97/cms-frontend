@@ -12,13 +12,13 @@ export default DS.Model.extend({
     statusText : Ember.computed('status', function () {
       const status = this.get('status');
       let statusText = 'Invalid Status';
-
-      if(status === 0)
-        statusText = 'Open';
-      else if(status === 1)
-        statusText = 'Assigned To Agent';
-      else if(status === 2)
-        statusText = 'Resolved By Agent';
+      
+      switch (status) {
+        case 0: statusText = 'Open'; break;
+        case 1: statusText = 'Assigned To Agent'; break;
+        case 2: statusText = 'Resolved By Agent'; break;
+        case 3: statusText = 'Closed'; break;
+      }
 
       return statusText;
     })

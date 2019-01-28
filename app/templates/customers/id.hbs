@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <h1>{{customer.id}}</h1>
+  </div>
+  <div class="row">
+    <table class="table">
+      <tbody>
+        <tr>
+          <td>Name</td>
+          <td>{{customer.Name}}</td>
+        </tr>
+        <tr>
+          <td>Address</td>
+          <td>{{customer.Address}}</td>
+        </tr>
+        <tr>
+          <td>Mobile</td>
+          <td>{{customer.Mobile}}</td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td>{{customer.Email}}</td>
+        </tr>
+        <tr>
+          <td>Actions</td>
+          <td> 
+            {{#link-to 'ticket.add' (query-params cid=customer.id)}}
+              Raise Ticket
+            {{/link-to}}
+            |
+            <a href="https://account.alphanetbroadband.com/customer?cid={{customer.id}}" target="_blank"> See Payments </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="row">
+    {{list-tickets model=customer.tickets onClick=(action 'routeToShowTicket') }}    
+  </div>
+</div>

@@ -1,12 +1,19 @@
 import Ember from 'ember';
-import moment from 'moment';
+import config from 'cms-frontend/config/environment'
 
 export default Ember.Route.extend({
-    model(){
-        return this.get('store').query('ticket', {
-          filter : {
-            after : moment().subtract(1,'days').format()
-          }
-        });
-    }
+  activate () {
+    window.setInterval( () => {
+      this.refresh()
+    }, config.autoRefreshTimeout || 1000)
+  },
+  model() {
+    return this.get('store').query('ticket', {
+      filter: {
+        status: {
+          $ne: 3
+        }
+      }
+    });
+  }
 });

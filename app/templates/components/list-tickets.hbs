@@ -17,7 +17,7 @@
         </thead>
         <tbody>
         {{#each model as |ticket|}}
-            <tr {{action 'showTicket' ticket.id }} class="statusCode{{ticket.status}}" >
+            <tr {{action 'showTicket' ticket.id }} class="statusCode{{ticket.status}} pointer" >
                 <td>
                   {{ticket.id}}
                 </td>

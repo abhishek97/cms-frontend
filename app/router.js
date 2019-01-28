@@ -14,6 +14,9 @@ Router.map(function() {
   this.route('home');
   this.route('500');
   this.route('login');
+  this.route('customers', function() {
+    this.route('id', {path: '/:cid'});
+  });
 });
 
 export default Router;

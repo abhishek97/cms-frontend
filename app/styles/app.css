@@ -37,3 +37,36 @@
 .navbar-right.btn {
   margin-left: 10px;
 }
+
+.feedback-stars {
+  font-size: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.feedback-stars i {
+  margin: 0 10px;
+}
+
+.feedback-container {
+  margin: 8rem;
+}
+
+.feedback-title {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.feedback-text {
+  text-align: center;
+  margin-top: 3rem;
+  text-transform: uppercase;
+}
+
+@media (max-width:768px) {
+  .feedback-container {
+    margin: 0rem;
+  }  
+
+}

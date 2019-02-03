@@ -1,0 +1,26 @@
+<div class="feedback-container">
+
+  <h1 class="feedback-title">
+    {{#if feedbackSubmitted}}
+      Thanks for your feedback!
+    {{else}}
+      How did we do?
+    {{/if}}
+  </h1>
+  
+  {{#unless feedbackSubmitted}}
+    {{feedback-stars marked=rating onchange=(action (mut rating))}}
+
+    <div class="form-group">
+      <label for="feedbackText">Feedback:</label>
+      {{textarea 
+      class="form-control"
+      rows="5" 
+      id="feedbackText"
+      placeholder="We love to hear from you. Please provide feedback on our service."
+      value=text}}
+    </div>
+
+    <button class="btn btn-primary" style="float:right" {{action 'submit'}}>Submit</button>
+  {{/unless}}
+</div>

@@ -1,0 +1,10 @@
+<div class="feedback-stars">
+{{#each totalStars as |t index|}}
+<i 
+  class="{{if (lte index marked) 'fas' 'far'}} fa-star" 
+  onmouseenter={{action onchange index}}></i>
+{{/each}}
+</div>
+<h4 class="feedback-text">{{text}}</h4>
+{{!-- to force browser to have the style in cache --}}
+<i class="fas fa-star" style="visibility:hidden"></i>

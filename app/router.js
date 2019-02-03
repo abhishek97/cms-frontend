@@ -17,6 +17,7 @@ Router.map(function() {
   this.route('customers', function() {
     this.route('id', {path: '/:cid'});
   });
+  this.route('feedback', {path: '/feedback/:ticketId'});
 });
 
 export default Router;

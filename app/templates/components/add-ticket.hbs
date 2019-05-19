@@ -19,7 +19,7 @@
                     {{textarea value=ticket.body class="form-control" }}
                     </div>
                     
-                    <button class="btn btn-primary" {{action 'addTicket'}} > Create Ticked for {{ticket.customer.id}} </button>
+                    <button class="btn btn-primary" {{action (perform addTicketTask)}} disabled={{addTicketTask.isRunning}} > Create Ticket for {{ticket.customer.id}} </button>
                     
                 {{/if}}
             </div>

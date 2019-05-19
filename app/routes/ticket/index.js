@@ -5,7 +5,7 @@ export default Ember.Route.extend({
   activate () {
     window.setInterval( () => {
       this.refresh()
-    }, config.autoRefreshTimeout || 1000)
+    }, config.autoRefreshTimeout || 10000)
   },
   model() {
     return this.get('store').query('ticket', {

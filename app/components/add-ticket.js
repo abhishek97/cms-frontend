@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import { task, timeout } from 'ember-concurrency';
 
 export default Ember.Component.extend({
   store: Ember.inject.service(),
@@ -7,6 +8,15 @@ export default Ember.Component.extend({
     this._super(...arguments)
     this.send('setCID', this.get('cid'))
   },
+  addTicketTask: task(function * () {
+    try {
+      const ticket = yield this.get('ticket').save()
+      this.get('router').transitionTo('ticket.show', ticket.id);
+    } catch(err) {
+      console.error(err)
+      this.get('router').transitionTo('500');
+    }
+  }).restartable(),
   actions: {
     findCustomer() {
       this.get('store').query('customer', {
@@ -30,14 +40,6 @@ export default Ember.Component.extend({
     setCID(cid) {
       this.set('ticket.CID', cid);
       this.send('findCustomer');
-    },
-    addTicket() {
-      this.get('ticket').save().then(ticket => {
-        this.get('router').transitionTo('ticket.show', ticket.id);
-      }).catch(err => {
-        console.error(err)
-        this.get('router').transitionTo('500');
-      });
     }
   }
 });
